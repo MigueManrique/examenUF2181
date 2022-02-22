@@ -1,9 +1,19 @@
-
 package libs;
-
+/**
+ * Clase de utilidades con funciones varias
+ * @author Miguel Manrique Arroyo
+ *
+ */
 
 public class Funciones {
-	
+	/**
+	 * Funcion que dados tres numeros enteros devuelve el que se encuentra
+	 * en medio segun la escala real.
+	 * @param num1 int numero entero cualquiera
+	 * @param num2 int numero entero cualquiera
+	 * @param num3 int numero entero cualquiera
+	 * @return int numero que se encuentra en medio.
+	 */
 	public int devuelveCentral(int num1, int num2, int num3) {
 		
 		int enMedio;
@@ -17,22 +27,27 @@ public class Funciones {
 		}
 		return enMedio;
 	}
-	
+	/**
+	 * Funcion que dado un año determina si es año bisiesto o no.
+	 * @param año int año del cual se quiere saber si es bisiesto.
+	 * @return true si el año es bisiesto, false si el año no es bisiesto.
+	 */
 	public boolean esBisiesto(int año) {
 		boolean bisiesto = false;
-		if (año %4 == 0 ) {
-			if (año%100==0 && año%400!=0) {
-				bisiesto=false;
-			} else {
-				bisiesto=true;
-			}
-		} else  {
-			bisiesto=true;
+		if((año%4 == 0) && (año%100 !=0)){
+			bisiesto = true;
+		}else if ((año%4 ==0) && (año%100 ==0) && (año%400 ==0)) {
+			bisiesto = true;
 		}
 		return bisiesto;
 	}
-	
-	public static boolean esCapicua(int v[]) {
+	/**
+	 * Funcion que dado un vector de enteros segun la posicion de cada dato
+	 * determinara si es capicua o no.
+	 * @param v int [] vector con los numeros
+	 * @return true si el vector es capicua, false si el vector no es capicua.
+	 */
+	public boolean esCapicua(int v[]) {
 		boolean capicua = true;
 		
 		for (int i=0, j=v.length-1; i<v.length/2; i++,j--) {
@@ -43,7 +58,14 @@ public class Funciones {
 		return capicua;
 	}
 
-	public static int [] suma_vectores(int v[], int v2[]) {
+	/**
+	 * Funcion que dados dos vectores de enteros devolvera un vector con la suma
+	 * de estos segun su posicion.
+	 * @param v int vector a sumar
+	 * @param v2 int vector a sumar
+	 * @return Devuelve un vector de enteros con la suma de v y v2.
+	 */
+	public int [] sumaVectores(int v[], int v2[]) {
 		int vector_suma [] = new int[v.length];
 		
 		if (v.length!=v2.length) 
